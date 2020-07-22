@@ -1,0 +1,44 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    group 'com.kangxw.study'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    targetCompatibility = 1.8
+    sourceCompatibility = 1.8
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    ext {
+        junitVersion = '4.12'
+    }
+
+    dependencies {
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.5'
+        compile group: 'org.springframework', name: 'spring-context-support', version: '5.2.7.RELEASE'
+        compile group: 'org.springframework', name: 'spring-jdbc', version: '5.2.7.RELEASE'
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+
+    idea {
+        module {
+            inheritOutputDirs = true
+        }
+    }
+
+    task copyTestResource(type: Copy) {
+        from "${projectDir}/src/test/resources"
+        into "${buildDir}/classes/java/test"
+    }
+
+    processTestResources.dependsOn([copyTestResource])
+}

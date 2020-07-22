@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.kangxw.study.spring.vo"/>
+    </typeAliases>
+    <!-- 引用映射文件 -->
+    <mappers>
+        <!-- resource : 相对路径查询资源的属性.
+        相对于当前核心配置文件的位置开始查找映射文件.
+        -->
+        <mapper resource="user.mapper.xml"/>
+    </mappers>
+</configuration>

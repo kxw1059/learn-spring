@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'com.kangxw.study'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.5'
+    compile group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.5'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.21'
+}
