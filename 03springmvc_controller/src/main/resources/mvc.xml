@@ -5,8 +5,6 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-
-    <context:component-scan base-package="com.kangxw.study.spring.mvc.controller"/>
     <!-- 配置渲染器-->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
@@ -16,6 +14,12 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-
-
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/hello.do">helloController</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="helloController" class="com.kangxw.study.spring.mvc.controller.HelloController"/>
 </beans>

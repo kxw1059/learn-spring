@@ -8,4 +8,6 @@ include '14spring_mybatis03'
 include '15spring_mybatis04'
 include '01springmvc_hello'
 include '02springmvc_annotation'
+include '03springmvc_controller'
+include '04springmvc_controller1'
 
