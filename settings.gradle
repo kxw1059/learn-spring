@@ -3,4 +3,7 @@ include '10spring_aop1'
 include '10spring_aop2'
 include '11spring_aop3'
 include '12spring_mybatis'
+include '13spring_mybatis02'
+include '14spring_mybatis03'
+include '15spring_mybatis04'
 

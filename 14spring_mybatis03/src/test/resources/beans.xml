@@ -35,7 +35,7 @@
     </tx:advice>
     <aop:config>
         <!-- 一般配置到 service 层 -->
-        <aop:pointcut id="pointcut" expression="execution(* com.kangxw.study.spring.dao.impl.*.*(..))"/>
+        <aop:pointcut id="pointcut" expression="execution(* com.kangxw.study.spring.service.impl.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut"/>
     </aop:config>
     <!-- 声明式事务配置 End -->
@@ -44,10 +44,11 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis.cfg.xml"/>
     </bean>
-    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.kangxw.study.spring.dao.UserMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
-    <bean id="userDao" class="com.kangxw.study.spring.dao.impl.UserDaoImpl">
-        <property name="sqlSession" ref="sqlSessionTemplate"/>
+    <bean id="userService" class="com.kangxw.study.spring.service.impl.UserServiceImpl">
+        <property name="userMapper" ref="userMapper"/>
     </bean>
 </beans>

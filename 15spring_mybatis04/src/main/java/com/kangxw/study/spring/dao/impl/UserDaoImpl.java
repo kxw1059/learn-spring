@@ -20,11 +20,6 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> selectUser() {
-        User user = new User();
-        user.setUsername("大侠");
-        user.setPassword("5555");
-        sqlSession.insert("com.kangxw.study.spring.vo.user.mapper.add", user);
-        sqlSession.delete("com.kangxw.study.spring.vo.user.mapper.remove", 20);
         return sqlSession.selectList("com.kangxw.study.spring.vo.user.mapper.selectAll");
     }
 

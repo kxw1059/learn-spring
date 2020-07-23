@@ -44,10 +44,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis.cfg.xml"/>
     </bean>
-    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="sqlSessionFactory"/>
-    </bean>
     <bean id="userDao" class="com.kangxw.study.spring.dao.impl.UserDaoImpl">
-        <property name="sqlSession" ref="sqlSessionTemplate"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 </beans>
