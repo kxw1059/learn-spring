@@ -6,4 +6,6 @@ include '12spring_mybatis'
 include '13spring_mybatis02'
 include '14spring_mybatis03'
 include '15spring_mybatis04'
+include '01springmvc_hello'
+include '02springmvc_annotation'
 
