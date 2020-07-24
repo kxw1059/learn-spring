@@ -1,0 +1,19 @@
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'war'
+
+    targetCompatibility = 1.8
+    sourceCompatibility = 1.8
+
+    group 'com.kangxw.study'
+    version '1.0-SNAPSHOT'
+
+    dependencies {
+        providedCompile group: 'javax', name: 'javaee-api', version: '7.0'
+        compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+        compile group: 'org.springframework', name: 'spring-webmvc', version: '5.2.7.RELEASE'
+        compile group: 'org.springframework', name: 'spring-aop', version: '5.2.7.RELEASE'
+        compile group: 'org.springframework', name: 'spring-tx', version: '5.2.7.RELEASE'
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+}

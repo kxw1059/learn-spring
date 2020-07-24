@@ -1,5 +1,4 @@
 allprojects {
-    apply plugin: 'java'
     apply plugin: 'idea'
 
     group 'com.kangxw.study'
@@ -11,6 +10,7 @@ allprojects {
 }
 
 subprojects {
+    apply plugin: 'java'
     targetCompatibility = 1.8
     sourceCompatibility = 1.8
 
